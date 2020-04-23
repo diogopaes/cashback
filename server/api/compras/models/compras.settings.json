@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "compras",
+  "info": {
+    "name": "Compras"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "Code": {
+      "type": "string",
+      "required": true
+    },
+    "Value": {
+      "type": "biginteger",
+      "required": true
+    },
+    "Date": {
+      "type": "date",
+      "required": true
+    },
+    "author": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "compras"
+    },
+    "Status": {
+      "type": "enumeration",
+      "enum": [
+        "emvalidacao",
+        "reprovado",
+        "aprovado"
+      ],
+      "default": "emvalidacao"
+    }
+  }
+}

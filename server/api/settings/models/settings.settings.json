@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "settings",
+  "info": {
+    "name": "Settings"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "discountpercentage": {
+      "type": "integer",
+      "required": true,
+      "unique": true,
+      "max": 100,
+      "min": 1,
+      "default": 1
+    }
+  }
+}
