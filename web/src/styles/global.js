@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@400;700&display=swap');
 
   *{
     margin: 0;
@@ -16,7 +16,7 @@ export default createGlobalStyle`
 
   html, body, #root {
     height: 100%;
-    background-color: #ccc;
+    background-color: #f1f1f1;
   }
 
   body {
@@ -24,7 +24,7 @@ export default createGlobalStyle`
   }
 
   body, input, button{
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Dosis', sans-serif;
     font-size: 14px;
   }
 
@@ -38,5 +38,6 @@ export default createGlobalStyle`
 
   button {
     cursor: pointer;
+    border: 0;
   }
 `;
