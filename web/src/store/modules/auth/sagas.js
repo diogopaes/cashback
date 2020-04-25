@@ -28,4 +28,38 @@ export function* signIn({ payload }) {
   }
 }
 
-export default all([takeLatest('@auth/SIGN_IN_REQUEST', signIn)]);
+export function* signUp({ payload }) {
+  try {
+    const { name, username, email, cpf, password } = payload;
+
+    yield call(api.post, 'auth/local/register', {
+      name,
+      username,
+      email,
+      cpf,
+      password,
+    });
+
+    history.push('/');
+  } catch (err) {
+    toast.error('Falha no cadastro, confira seus dados');
+
+    yield put(signFailure());
+  }
+}
+
+export function setJwt({ payload }) {
+  if (!payload) return;
+
+  const { jwt } = payload.auth;
+
+  if (jwt) {
+    api.defaults.headers.Authorization = `Bearer ${jwt}`;
+  }
+}
+
+export default all([
+  takeLatest('persist/REHYDRATE', setJwt),
+  takeLatest('@auth/SIGN_IN_REQUEST', signIn),
+  takeLatest('@auth/SIGN_UP_REQUEST', signUp),
+]);
