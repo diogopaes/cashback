@@ -22,9 +22,9 @@
       "required": true
     },
     "author": {
+      "via": "compras",
       "plugin": "users-permissions",
-      "model": "user",
-      "via": "compras"
+      "model": "user"
     },
     "Status": {
       "type": "enumeration",

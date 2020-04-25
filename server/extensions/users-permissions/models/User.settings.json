@@ -53,19 +53,19 @@
       "plugin": "users-permissions",
       "configurable": false
     },
-    "cpf": {
-      "type": "biginteger",
-      "required": true,
-      "unique": false
-    },
-    "fullname": {
+    "name": {
       "type": "string",
       "required": true,
       "unique": true
     },
     "compras": {
-      "via": "author",
-      "collection": "compras"
+      "collection": "compras",
+      "via": "author"
+    },
+    "cpf": {
+      "type": "string",
+      "minLength": 10,
+      "required": true
     }
   }
 }
