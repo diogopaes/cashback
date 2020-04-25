@@ -56,7 +56,7 @@
     "cpf": {
       "type": "biginteger",
       "required": true,
-      "unique": true
+      "unique": false
     },
     "fullname": {
       "type": "string",

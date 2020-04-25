@@ -2,7 +2,7 @@
   "kind": "collectionType",
   "collectionName": "compras",
   "info": {
-    "name": "Compras"
+    "name": "Purchase"
   },
   "options": {
     "increments": true,
