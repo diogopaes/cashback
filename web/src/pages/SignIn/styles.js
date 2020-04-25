@@ -86,6 +86,13 @@ export const Container = styled.div`
         border: 8px solid #ffc200;
       }
     }
+
+    span {
+      color: red;
+      margin-top: 10px;
+      font-size: 12px;
+    }
+
     margin-bottom: 20px;
   }
 
