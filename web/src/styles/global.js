@@ -4,7 +4,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 export default createGlobalStyle`
 
-  @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@400;700&display=swap');
+  @import url('https://fonts.googleapis.com/css?family=Montserrat:200,400,700|Roboto');
 
   *{
     margin: 0;
@@ -19,7 +19,7 @@ export default createGlobalStyle`
 
   html, body, #root {
     height: 100%;
-    background-color: #f1f1f1;
+    background-color: #333;
   }
 
   body {
@@ -27,7 +27,7 @@ export default createGlobalStyle`
   }
 
   body, input, button{
-    font-family: 'Dosis', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 14px;
   }
 

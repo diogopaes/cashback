@@ -23,7 +23,7 @@ export function* signIn({ payload }) {
 
     history.push('/dashboard');
   } catch (err) {
-    toast.error('Falha na autenticação');
+    toast.error('Falha no login, email ou senha incorretos');
     yield put(signFailure());
   }
 }

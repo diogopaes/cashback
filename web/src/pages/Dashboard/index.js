@@ -1,7 +1,21 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-// import { Container } from './styles';
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
+
+import { Container, Content } from './styles';
 
 export default function Dashboard() {
-  return <h1>Dashboard</h1>;
+  return (
+    <>
+      <Header />
+      <Container>
+        <Content>
+          <Link to="/">Adicionar Compras</Link>
+        </Content>
+      </Container>
+      <Footer />
+    </>
+  );
 }

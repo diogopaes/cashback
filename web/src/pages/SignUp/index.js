@@ -1,4 +1,5 @@
 import React from 'react';
+import InputMask from 'react-input-mask';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Form, Input } from '@rocketseat/unform';
@@ -41,7 +42,9 @@ export default function SignUp() {
           <Input name="name" type="text" placeholder="Seu Nome Completo" />
           <Input name="username" type="text" placeholder="Seu Username" />
           <Input name="email" type="email" placeholder="Seu e-mail" />
-          <Input name="cpf" type="text" placeholder="Seu cpf" />
+          <InputMask mask="999.999.999-99">
+            {() => <Input name="cpf" type="text" placeholder="Seu cpf" />}
+          </InputMask>
           <Input name="password" type="password" placeholder="Sua Senha" />
 
           <button type="submit">Cadastrar</button>
