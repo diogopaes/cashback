@@ -1,7 +1,9 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Form, Input } from '@rocketseat/unform';
 import { FiUser } from 'react-icons/fi';
+
+import { updateResellerRequest } from '../../store/modules/user/actions';
 
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
@@ -9,10 +11,14 @@ import Footer from '../../components/Footer';
 import { Container, Content } from './styles';
 
 export default function Profile() {
+  const dispatch = useDispatch();
   const reseller = useSelector((state) => state.user.reseller);
 
-  function handleSubmit(data) { }
+  const { id } = reseller;
 
+  function handleSubmit(data) {
+    dispatch(updateResellerRequest({ id, ...data }));
+  }
   return (
     <>
       <Header />
@@ -21,13 +27,9 @@ export default function Profile() {
           <div>
             <FiUser size={220} color="#333" />
             <span>
-              <h2>Diogo Paes</h2>
+              <h2>Profile</h2>
               <h4>Atualize sua informações de perfil</h4>
             </span>
-            {/* <img
-              src="https://api.adorable.io/avatars/225/abott@adorable.png"
-              alt=""
-            /> */}
           </div>
           <Form initialData={reseller} onSubmit={handleSubmit}>
             <Input name="name" type="text" placeholder="Nome Completo" />
@@ -36,14 +38,14 @@ export default function Profile() {
             <hr />
 
             <Input
-              name="password"
-              type="oldPassword"
+              name="oldPassword"
+              type="password"
               placeholder="Senha Atual"
             />
             <Input name="password" type="password" placeholder="Nova Senha" />
             <Input
-              name="password"
-              type="confirmPassword"
+              name="confirmPassword"
+              type="password"
               placeholder="Confirmar Senha"
             />
 
