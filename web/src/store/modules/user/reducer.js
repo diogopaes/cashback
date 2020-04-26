@@ -15,6 +15,10 @@ export default function user(state = INITIAL_STATE, action) {
         draft.reseller = action.payload.reseller;
         break;
       }
+      case '@auth/SIGN_OUT': {
+        draft.reseller = null;
+        break;
+      }
       default:
     }
   });
