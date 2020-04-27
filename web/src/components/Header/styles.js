@@ -2,8 +2,9 @@ import styled from 'styled-components';
 
 export const Container = styled.header`
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   background-color: #333;
   padding: 0 20px;
 `;
@@ -15,6 +16,13 @@ export const Content = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+    img {
+      margin-bottom: 10px;
+    }
+  }
 
   nav {
     display: flex;
@@ -68,6 +76,15 @@ export const Cash = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-right: 20px;
+
+  h3 {
+    color: #fff;
+  }
+
+  span {
+    color: #ffc200;
+  }
   svg {
     /* animation: animationFrames 1.3s linear infinite alternate;
 

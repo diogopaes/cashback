@@ -15,6 +15,11 @@ export const Container = styled.div`
 
   img {
     width: 200px;
+    transition: all 0.2s cubic-bezier(0, 0.46, 0.42, 1.37);
+
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 
   form {
@@ -77,13 +82,10 @@ export const Container = styled.div`
       box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
       -webkit-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
       -moz-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
-      transition: all 0.3s linear;
+      transition: all 0.2s cubic-bezier(0, 0.46, 0.42, 1.37);
 
       &:hover {
-        background-color: #d3a100;
-      }
-      &:active {
-        border: 8px solid #ffc200;
+        transform: scale(1.1);
       }
     }
 
@@ -102,11 +104,7 @@ export const Container = styled.div`
     a {
       color: #ffc200;
       margin-left: 5px;
-      transition: all 0.2s linear;
-
-      &:hover {
-        text-decoration: underline;
-      }
+      display: inline-block;
     }
   }
 `;

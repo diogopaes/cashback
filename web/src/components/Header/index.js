@@ -25,11 +25,12 @@ export default function Header() {
         </Link>
         <nav>
           <Cash>
-            <Link to="/">
-              <FiDollarSign size={45} color="#fff" />
-            </Link>
+            <FiDollarSign size={45} color="#fff" />
+            <div>
+              <h3>Total</h3>
+              <span>R$500,00</span>
+            </div>
           </Cash>
-          <small>|</small>
           <User>
             <FiUser size={50} color="#fff" />
             <div>
@@ -41,7 +42,9 @@ export default function Header() {
                 </span>
                 <span>
                   <FiLogOut size={14} color="#fff" />
-                  <Link onClick={handleSignOut}>Sair</Link>
+                  <Link to onClick={handleSignOut}>
+                    Sair
+                  </Link>
                 </span>
               </div>
             </div>

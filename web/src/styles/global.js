@@ -29,10 +29,16 @@ export default createGlobalStyle`
   body, input, button{
     font-family: 'Montserrat', sans-serif;
     font-size: 14px;
+    letter-spacing: 0.5px;
   }
 
   a {
     text-decoration: none;
+    transition: all .2s cubic-bezier(0, 0.46, 0.42, 1.37);
+  }
+
+  a:hover{
+    transform: scale(1.1);
   }
 
   ul {

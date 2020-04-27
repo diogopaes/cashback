@@ -8,6 +8,8 @@ import SignUp from '../pages/SignUp/index';
 import Profile from '../pages/Profile/index';
 import Dashboard from '../pages/Dashboard/index';
 
+import Purchase from '../pages/Purchase/index';
+
 export default function Routes() {
   return (
     <Switch>
@@ -16,6 +18,8 @@ export default function Routes() {
 
       <Route path="/profile" component={Profile} isPrivate />
       <Route path="/dashboard" component={Dashboard} isPrivate />
+
+      <Route path="/purchase" component={Purchase} isPrivate />
     </Switch>
   );
 }

@@ -1,52 +1,70 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  background-color: #333333;
-  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0 20px;
+  margin-bottom: 20px;
+`;
 
-  > div {
-    width: 100%;
-    max-width: 360px;
-    text-align: center;
+export const Content = styled.div`
+  width: 100%;
+  max-width: 920px;
+  min-height: 600px;
+  align-items: center;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 3px;
+  border-top: 3px;
+  border-top: 5px solid #ffc200;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+
+  @media (min-width: 700px) {
+    display: grid;
+    grid-template-columns: 50% 50%;
   }
 
-  img {
-    width: 200px;
-    transition: all 0.2s cubic-bezier(0, 0.46, 0.42, 1.37);
+  > div {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0 20px;
+    height: 130px;
 
-    &:hover {
-      transform: scale(1.1);
+    @media (min-width: 700px) {
+      flex-direction: column;
+      height: auto;
+    }
+
+    span {
+      @media (min-width: 700px) {
+        text-align: center;
+      }
+
+      h2 {
+        color: #333333;
+        margin-bottom: 5px;
+        font-size: 40px;
+      }
+
+      h4 {
+        font-weight: 400;
+        color: #888787;
+        margin-bottom: 0px;
+      }
+    }
+    svg {
+      width: 80px;
+      @media (min-width: 700px) {
+        width: auto;
+      }
     }
   }
 
   form {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #fff;
-    margin-top: 20px;
-    border-radius: 3px;
-    padding: 30px 30px;
-    border-top: 5px solid #ffc200;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
-    -webkit-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
-    -moz-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
-
-    h2 {
-      color: #333333;
-      text-transform: uppercase;
-      margin-bottom: 5px;
-    }
-
-    h4 {
-      font-weight: 400;
-      color: #888787;
-    }
-
     input {
       margin-top: 20px;
       border: 1px solid #888787;
@@ -63,6 +81,13 @@ export const Container = styled.div`
       &::placeholder {
         color: #c7c7c7;
       }
+    }
+
+    hr {
+      border: 0;
+      height: 1px;
+      margin-top: 20px;
+      background-color: #e6e6e6;
     }
 
     button {
@@ -96,15 +121,5 @@ export const Container = styled.div`
     }
 
     margin-bottom: 20px;
-  }
-
-  span {
-    color: #fff;
-
-    a {
-      color: #ffc200;
-      margin-left: 5px;
-      display: inline-block;
-    }
   }
 `;

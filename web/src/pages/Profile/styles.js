@@ -57,17 +57,6 @@ export const Content = styled.div`
         margin-bottom: 0px;
       }
     }
-    /* img {
-      border-radius: 50%;
-      border: 5px solid #333;
-      width: 120px;
-      height: 120px;
-
-      @media (min-width: 700px) {
-        width: 240px;
-        height: 240px;
-      }
-    } */
     svg {
       width: 80px;
       @media (min-width: 700px) {
@@ -119,13 +108,10 @@ export const Content = styled.div`
       box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
       -webkit-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
       -moz-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
-      transition: all 0.3s linear;
+      transition: all 0.2s cubic-bezier(0, 0.46, 0.42, 1.37);
 
       &:hover {
-        background-color: #d3a100;
-      }
-      &:active {
-        border: 8px solid #ffc200;
+        transform: scale(1.1);
       }
     }
 
