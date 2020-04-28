@@ -21,9 +21,11 @@ export default function Dashboard() {
   const reseller = useSelector((state) => state.user.reseller);
 
   useEffect(() => {
-    api.get(`compras?author.id=${reseller.id}`).then((response) => {
-      setPurchases(response.data);
-    });
+    api
+      .get(`compras?author.id=${reseller.id}&_sort=created_at:desc`)
+      .then((response) => {
+        setPurchases(response.data);
+      });
   }, [reseller.id]);
 
   return (

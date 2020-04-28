@@ -15,6 +15,10 @@ export default function user(state = INITIAL_STATE, action) {
         draft.reseller = action.payload.reseller;
         break;
       }
+      case '@user/UPDATE_CASHBACK_SUCCESS': {
+        draft.reseller = action.payload.user;
+        break;
+      }
       case '@auth/SIGN_OUT': {
         draft.reseller = null;
         break;

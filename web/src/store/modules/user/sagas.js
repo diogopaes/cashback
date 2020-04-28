@@ -3,7 +3,11 @@ import { toast } from 'react-toastify';
 
 import api from '../../../services/api';
 
-import { updateResellerSuccess, updateResellerFailure } from './actions';
+import {
+  updateResellerSuccess,
+  updateResellerFailure,
+  updateCashbackSuccess,
+} from './actions';
 
 export function* updateReseller({ payload }) {
   try {
@@ -26,6 +30,22 @@ export function* updateReseller({ payload }) {
   }
 }
 
+export function* updateCashback({ payload }) {
+  try {
+    const { id, cashback } = payload.data;
+
+    const response = yield call(api.put, `users/${id}`, cashback);
+
+    toast.success('Conta de revendedor(a) atualizada com sucesso!');
+
+    yield put(updateCashbackSuccess(response.data));
+  } catch (err) {
+    toast.error('Erro ao tentar atualizar conta');
+    yield put(updateResellerFailure());
+  }
+}
+
 export default all([
   takeLatest('@user/UPDATE_PROFILE_REQUEST', updateReseller),
+  takeLatest('@user/UPDATE_CASHBACK_REQUEST', updateCashback),
 ]);

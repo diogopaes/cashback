@@ -17,3 +17,17 @@ export function updateResellerFailure() {
     type: '@user/UPDATE_FAILURE',
   };
 }
+
+export function updateCashbackRequest(data) {
+  return {
+    type: '@user/UPDATE_CASHBACK_REQUEST',
+    payload: { data },
+  };
+}
+
+export function updateCashbackSuccess(reseller) {
+  return {
+    type: '@user/UPDATE_CASHBACK_SUCCESS',
+    payload: { reseller },
+  };
+}

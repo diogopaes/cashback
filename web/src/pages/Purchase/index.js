@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-// import InputMask from 'react-input-mask';
 import { useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
 
@@ -17,18 +16,15 @@ export default function Purchaces() {
   const reseller = useSelector((state) => state.user.reseller);
 
   const [discount, setdiscount] = useState('');
-  const [user, setUser] = useState('');
   const [code, setCode] = useState('');
   const [value, setValue] = useState('');
   const [date, setDate] = useState('');
 
+  console.log(reseller.totalcash);
+
   useEffect(() => {
     api.get('settings').then((response) => {
       setdiscount(response.data);
-    });
-
-    api.get(`users/${reseller.id}`).then((response) => {
-      setUser(response.data);
     });
   }, [reseller.id]);
 
@@ -63,7 +59,7 @@ export default function Purchaces() {
       await api.post('cashbacks', cashback);
 
       const sumcash = {
-        totalcash: user.totalcash + valueCashback,
+        totalcash: reseller.totalcash + valueCashback,
       };
 
       await api.put(`users/${reseller.id}`, sumcash);
@@ -94,7 +90,6 @@ export default function Purchaces() {
               onChange={(e) => setCode(e.target.value)}
               placeholder="Código da compra"
             />
-
             <input
               placeholder="Valor da compra"
               value={value}

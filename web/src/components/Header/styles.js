@@ -12,6 +12,7 @@ export const Container = styled.header`
 export const Content = styled.div`
   width: 100%;
   max-width: 920px;
+  height: 100px;
   padding: 20px;
   display: flex;
   justify-content: space-between;
