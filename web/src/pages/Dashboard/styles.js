@@ -105,6 +105,11 @@ export const Item = styled.div`
     p {
       margin-bottom: 10px;
     }
+    &.status {
+      strong {
+        text-transform: capitalize;
+      }
+    }
   }
 `;
 

@@ -38,9 +38,11 @@ export function* signUp({ payload }) {
       email,
       cpf,
       password,
+      totalcash: 0,
     });
 
     history.push('/');
+    window.location.reload();
   } catch (err) {
     toast.error('Falha no cadastro, confira seus dados');
 

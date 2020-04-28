@@ -84,7 +84,7 @@ export default function Dashboard() {
                           {purchase.date}
                         </strong>
                       </div>
-                      <div>
+                      <div className="status">
                         {/* <p>Status do cashback</p> */}
                         <strong>
                           <FiInfo size={20} color="#ccc" />
