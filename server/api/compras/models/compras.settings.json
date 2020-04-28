@@ -9,24 +9,24 @@
     "timestamps": true
   },
   "attributes": {
-    "Code": {
+    "code": {
       "type": "string",
       "required": true
     },
-    "Value": {
-      "type": "biginteger",
+    "value": {
+      "type": "decimal",
       "required": true
     },
-    "Date": {
+    "date": {
       "type": "date",
       "required": true
     },
     "author": {
-      "via": "compras",
       "plugin": "users-permissions",
-      "model": "user"
+      "model": "user",
+      "via": "compras"
     },
-    "Status": {
+    "status": {
       "type": "enumeration",
       "enum": [
         "emvalidacao",
@@ -34,6 +34,10 @@
         "aprovado"
       ],
       "default": "emvalidacao"
+    },
+    "cashbacks": {
+      "via": "purchase",
+      "collection": "cashback"
     }
   }
 }

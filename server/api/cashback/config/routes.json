@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/cashbacks",
+      "handler": "cashback.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/cashbacks/count",
+      "handler": "cashback.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/cashbacks/:id",
+      "handler": "cashback.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/cashbacks",
+      "handler": "cashback.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/cashbacks/:id",
+      "handler": "cashback.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/cashbacks/:id",
+      "handler": "cashback.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

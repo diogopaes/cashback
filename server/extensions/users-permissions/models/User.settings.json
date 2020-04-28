@@ -59,13 +59,17 @@
       "unique": true
     },
     "compras": {
-      "collection": "compras",
-      "via": "author"
+      "via": "author",
+      "collection": "compras"
     },
     "cpf": {
       "type": "string",
       "minLength": 10,
       "required": true
+    },
+    "cashbacks": {
+      "via": "author",
+      "collection": "cashback"
     }
   }
 }

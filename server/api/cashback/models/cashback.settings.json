@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cashbacks",
+  "info": {
+    "name": "Cashback"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "value": {
+      "type": "decimal"
+    },
+    "porcentage": {
+      "type": "integer"
+    },
+    "author": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "cashbacks"
+    },
+    "purchase": {
+      "model": "compras",
+      "via": "cashbacks"
+    }
+  }
+}
