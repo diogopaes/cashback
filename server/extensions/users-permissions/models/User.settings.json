@@ -68,8 +68,14 @@
       "required": true
     },
     "cashbacks": {
-      "via": "author",
-      "collection": "cashback"
+      "collection": "cashback",
+      "via": "author"
+    },
+    "totalcash": {
+      "type": "decimal",
+      "unique": true,
+      "min": 0,
+      "default": 0
     }
   }
 }

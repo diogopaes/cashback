@@ -29,15 +29,15 @@
     "status": {
       "type": "enumeration",
       "enum": [
-        "emvalidacao",
+        "validacao",
         "reprovado",
         "aprovado"
       ],
-      "default": "emvalidacao"
+      "default": "validacao"
     },
     "cashbacks": {
-      "via": "purchase",
-      "collection": "cashback"
+      "collection": "cashback",
+      "via": "purchase"
     }
   }
 }

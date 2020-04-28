@@ -16,13 +16,13 @@
       "type": "integer"
     },
     "author": {
+      "via": "cashbacks",
       "plugin": "users-permissions",
-      "model": "user",
-      "via": "cashbacks"
+      "model": "user"
     },
     "purchase": {
-      "model": "compras",
-      "via": "cashbacks"
+      "via": "cashbacks",
+      "model": "compras"
     }
   }
 }
