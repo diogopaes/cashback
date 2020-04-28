@@ -18,18 +18,11 @@ import { Container, Content, CashBack, ItemGroup, Item } from './styles';
 
 export default function Dashboard() {
   const [purchases, setPurchases] = useState([]);
-  const [discont, setDiscont] = useState('');
   const reseller = useSelector((state) => state.user.reseller);
-
-  const totalPulchases = purchases.length;
 
   useEffect(() => {
     api.get(`compras?author.id=${reseller.id}`).then((response) => {
       setPurchases(response.data);
-    });
-
-    api.get('settings').then((response) => {
-      setDiscont(response.data);
     });
   }, [reseller.id]);
 
@@ -45,18 +38,11 @@ export default function Dashboard() {
 
           <ul>
             {purchases.map((purchase) => {
-              const valorDesconto = parseFloat(
-                purchase.value * (discont.discountpercentage / 100)
-              );
-              const totalComDesconto =
-                parseFloat(purchase.value) - parseFloat(valorDesconto);
-              const valorCashback =
-                parseFloat(purchase.value) - parseFloat(totalComDesconto);
               return (
                 <li key={purchase.id}>
                   <CashBack>
                     <span>
-                      <p>{discont.discountpercentage}%</p>
+                      <p>{purchase.cashbacks[0].porcentage}%</p>
                     </span>
                     <div>
                       <p>Valor do CashBack</p>
@@ -64,7 +50,7 @@ export default function Dashboard() {
                         {Intl.NumberFormat('pt-BR', {
                           style: 'currency',
                           currency: 'BRL',
-                        }).format(valorCashback)}
+                        }).format(purchase.cashbacks[0].value)}
                       </h1>
                     </div>
                   </CashBack>

@@ -60,6 +60,7 @@ export function setJwt({ payload }) {
 
 export function signOut() {
   history.push('/');
+  window.location.reload();
 }
 
 export default all([

@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import InputMask from 'react-input-mask';
+import React, { useState, useEffect } from 'react';
+// import InputMask from 'react-input-mask';
 import { useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
 
@@ -16,9 +16,17 @@ import { Container, Content } from './styles';
 export default function Purchaces() {
   const reseller = useSelector((state) => state.user.reseller);
 
+  const [discount, setdiscount] = useState('');
+
   const [code, setCode] = useState('');
   const [value, setValue] = useState('');
   const [date, setDate] = useState('');
+
+  useEffect(() => {
+    api.get('settings').then((response) => {
+      setdiscount(response.data);
+    });
+  }, [reseller.id]);
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -31,7 +39,25 @@ export default function Purchaces() {
     };
 
     try {
-      await api.post('compras', data);
+      const response = await api.post('compras', data);
+
+      const valueDiscount = parseFloat(
+        data.value * (discount.discountpercentage / 100)
+      );
+      const totalWithDiscount =
+        parseFloat(data.value) - parseFloat(valueDiscount);
+      const valueCashback =
+        parseFloat(data.value) - parseFloat(totalWithDiscount);
+
+      const cashback = {
+        value: valueCashback,
+        porcentage: discount.discountpercentage,
+        author: reseller.id,
+        purchase: response.data.id,
+      };
+
+      await api.post('cashbacks', cashback);
+
       toast.success('Compra cadastrada com sucesso');
 
       history.push('/');

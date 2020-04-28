@@ -4,8 +4,6 @@ import 'react-toastify/dist/ReactToastify.css';
 
 export default createGlobalStyle`
 
-  @import url('https://fonts.googleapis.com/css?family=Montserrat:200,400,700|Roboto');
-
   *{
     margin: 0;
     padding: 0;

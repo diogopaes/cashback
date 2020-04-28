@@ -42,7 +42,7 @@ export default function Header() {
                 </span>
                 <span>
                   <FiLogOut size={14} color="#fff" />
-                  <Link to onClick={handleSignOut}>
+                  <Link to="/" onClick={handleSignOut}>
                     Sair
                   </Link>
                 </span>
