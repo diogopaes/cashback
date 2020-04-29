@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <Container>
       <footer>
-        <h4>Feito com ❤️ by Diogo Paes</h4>
+        <h4>Feito com ♥ by Diogo Paes</h4>
       </footer>
     </Container>
   );
