@@ -1,5 +1,5 @@
 <h3 align="center">
-<img alt="CashBack logo" src="./utils/black.svg" width="300"/>
+<img alt="CashBack logo" src="./utils/logoblack.svg" width="300"/>
   
 <br>
 Project Test (CashBack)
